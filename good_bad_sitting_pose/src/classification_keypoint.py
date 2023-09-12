@@ -29,6 +29,8 @@ class KeypointClassification:
 
     def load_model(self):
         self.model = NeuralNet()
+        # Specify the input_size as 23
+        self.model = NeuralNet(input_size=23)
         self.model.load_state_dict(
             torch.load(self.path_model, map_location=self.device)
         )
